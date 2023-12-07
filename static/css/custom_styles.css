@@ -1,0 +1,19 @@
+#hr_recruitment_form .btn {
+    background-color: #e3875f;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+}
+
+#hr_recruitment_form input {
+    border-radius: 0;
+}
+
+#hr_recruitment_form label {
+    text-transform: uppercase;
+}
+
+#hr_recruitment_form .s_website_form_submit {
+    text-align: center;
+}

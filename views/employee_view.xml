@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_employee_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <!-- i love GB -->
+            <xpath expr="//field[@name='work_email']" position="after">
+                <field name="i_love_gb"/>
+            </xpath>
+            <!-- total salary -->
+            <xpath expr="//field[@name='address_home_id']" position="after">
+                <field name="salary"/>
+                <field name="tax"/>
+                <field name="total_salary"/>
+            </xpath>
+            <!-- special phone-->
+            <xpath expr="//field[@name='phone']" position="replace">
+                <field name="special_phone"/>
+            </xpath>
+            <!-- employee_contacts -->
+            <xpath expr="//field[@name='i_love_gb']" position="after">
+                <field name="employee_contacts" attrs="{'invisible': [('i_love_gb', '=', False)]}"/>
+            </xpath>
+            <!-- button next to the Launch Plan button -->
+            <!-- TODO make more robust -->
+<!--            <xpath expr="//button[span[text()='Launch Plan']]" position="after">-->
+            <xpath expr="//button[@name='144']" position="after">
+                <button name="send_employee_emails" string="Send Emails" type="object" class="oe_highlight"/>
+            </xpath>
+            <!-- unique employee_number -->
+            <xpath expr="//field[@name='mobile_phone']" position="after">
+                <field name="employee_number"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
